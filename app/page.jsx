@@ -70,12 +70,12 @@ export default function Home() {
             ) : (
                 <>
                     <div className="h-40 w-40 relative">
-                            <Image
-                                src="/logo/dinoLogo.png"
-                                alt="logo"
-                                layout="fill"
-                                objectFit="contain"
-                            />
+                        <Image
+                            src="/logo/dinoLogo.png"
+                            alt="logo"
+                            layout="fill"
+                            objectFit="contain"
+                        />
                     </div>
                     <div className="">
                         {dinosaur_dataset.map((obj, i) => (
