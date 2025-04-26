@@ -5,7 +5,8 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 import Loading from "./components/Loading";
-import ScrollActivatedVideo from "./components/Test";
+import ScrollActivatedVideo from "./components/TapToPlayVideo";
+import Link from "next/link";
 
 const dinosaur_dataset = [
     {
@@ -102,16 +103,16 @@ export default function Home() {
                 <Loading />
             ) : (
                 <>
-                    {/* <div className="h-40 w-40 relative">
+                    <ScrollActivatedVideo />
+
+                    <div className="h-40 w-40 relative">
                         <Image
                             src="/logo/dinoLogo.png"
                             alt="logo"
                             layout="fill"
                             objectFit="contain"
                         />
-                    </div> */}
-                  
-                    <ScrollActivatedVideo />
+                    </div>
 
                     <div className="pt-5">
                         {dinosaur_dataset.map((obj, i) => (
@@ -129,19 +130,25 @@ export default function Home() {
                                                 key={itemName}
                                                 className="group relative"
                                             >
-                                                <div className="relative w-80 h-60 rounded-md overflow-hidden cursor-zoom-in group-hover:brightness-125 group-hover:filter group-hover:contrast-75 duration-300 ease-in-out border border-gray-600">
-                                                    <Image
-                                                        src={`/dinosaur/${itemName}.jpg`}
-                                                        alt={itemName}
-                                                        layout="fill"
-                                                        objectFit="cover"
-                                                        className="transition-transform duration-300 ease-in-out group-hover:scale-110"
-                                                    />
+                                                <Link
+                                                    href={{
+                                                        pathname: `/profile/${itemName}`,
+                                                    }}
+                                                >
+                                                    <div className="relative w-80 h-60 rounded-md overflow-hidden cursor-zoom-in group-hover:brightness-125 group-hover:filter group-hover:contrast-75 duration-300 ease-in-out border border-gray-600">
+                                                        <Image
+                                                            src={`/dinosaur/${itemName}.jpg`}
+                                                            alt={itemName}
+                                                            layout="fill"
+                                                            objectFit="cover"
+                                                            className="transition-transform duration-300 ease-in-out group-hover:scale-110"
+                                                        />
 
-                                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 text-white font-bold text-lg">
-                                                        {itemName}
+                                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 text-white font-bold text-lg">
+                                                            {itemName}
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                </Link>
 
                                                 <div className="absolute bottom-0 left-0 w-full bg-white opacity-0 group-hover:opacity-80 transition-opacity duration-300 py-1 text-center">
                                                     {itemEn}
