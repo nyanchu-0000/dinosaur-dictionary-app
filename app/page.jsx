@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 import Loading from "./components/Loading";
+import ScrollActivatedVideo from "./components/Test";
 
 const dinosaur_dataset = [
     {
@@ -109,15 +110,8 @@ export default function Home() {
                             objectFit="contain"
                         />
                     </div> */}
-                    <div className="h-screen">
-                        <video
-                            src="/video/0423.mp4"
-                            preload="metadata"
-                            playsInline
-                            autoPlay
-                            muted
-                        ></video>
-                    </div>
+                  
+                    <ScrollActivatedVideo />
 
                     <div className="pt-5">
                         {dinosaur_dataset.map((obj, i) => (
