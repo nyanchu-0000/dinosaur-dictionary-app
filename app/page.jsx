@@ -1,54 +1,85 @@
 "use client";
 
 import Image from "next/image";
+
 import { useState, useEffect } from "react";
+
 import Loading from "./components/Loading";
 
 const dinosaur_dataset = [
     {
         eatingHabits: "肉食",
+
         dinoName: [
             "ヴェロキラプトル",
+
             "ティラノサウルス",
+
             "スピノサウルス",
+
             "カルノタサウルス",
         ],
+
         dinoNameEn: [
             "Velociraptor",
+
             "Tyrannosaurus",
+
             "Spinosaurus",
+
             "Carnotaurus",
         ],
     },
+
     {
         eatingHabits: "草食",
+
         dinoName: [
             "パラサウロロフス",
+
             "トリケラトプス",
+
             "ステゴサウルス",
+
             "ブラキオサウルス",
+
             "パキケファロサウルス",
+
             "アパトサウルス",
+
             "アンキロサウルス",
         ],
+
         dinoNameEn: [
             "Parasaurolophus",
+
             "Triceratops",
+
             "Stegosaurus",
+
             "Brachiosaurus",
+
             "Pachycephalosaurus",
+
             "Apatosaurus",
+
             "Ankylosaurus",
         ],
     },
+
     {
         eatingHabits: "翼竜",
+
         dinoName: ["プテラノドン", "ディモルフォドン"],
+
         dinoNameEn: ["Pteranodon", "Dimorphodon"],
     },
+
     {
         eatingHabits: "海生爬虫類",
+
         dinoName: ["モササウルス"],
+
         dinoNameEn: ["Mosasaurus"],
     },
 ];
@@ -60,32 +91,45 @@ export default function Home() {
         const timer = setTimeout(() => {
             setIsLoading(false);
         }, 1500);
+
         return () => clearTimeout(timer);
     }, []);
 
     return (
-        <div className="flex flex-col items-center pt-8 bg_dino">
+        <div className="flex flex-col items-center bg_dino">
             {isLoading ? (
                 <Loading />
             ) : (
                 <>
-                    <div className="h-40 w-40 relative">
+                    {/* <div className="h-40 w-40 relative">
                         <Image
                             src="/logo/dinoLogo.png"
                             alt="logo"
                             layout="fill"
                             objectFit="contain"
                         />
+                    </div> */}
+                    <div className="h-screen">
+                        <video
+                            src="/video/0423.mp4"
+                            preload="metadata"
+                            playsInline
+                            autoPlay
+                            muted
+                        ></video>
                     </div>
-                    <div className="">
+
+                    <div className="pt-5">
                         {dinosaur_dataset.map((obj, i) => (
                             <div className="mb-10" key={i}>
                                 <p className="font-semibold text-lg hidden">
                                     {obj.eatingHabits}
                                 </p>
+
                                 <div className="grid grid-cols-4 gap-x-4 gap-y-10">
                                     {obj.dinoName.map((itemName, j) => {
                                         const itemEn = obj.dinoNameEn[j];
+
                                         return (
                                             <div
                                                 key={itemName}
@@ -99,10 +143,12 @@ export default function Home() {
                                                         objectFit="cover"
                                                         className="transition-transform duration-300 ease-in-out group-hover:scale-110"
                                                     />
+
                                                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 text-white font-bold text-lg">
                                                         {itemName}
                                                     </div>
                                                 </div>
+
                                                 <div className="absolute bottom-0 left-0 w-full bg-white opacity-0 group-hover:opacity-80 transition-opacity duration-300 py-1 text-center">
                                                     {itemEn}
                                                 </div>
