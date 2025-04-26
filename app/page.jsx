@@ -106,6 +106,7 @@ export default function Home() {
                                                 <div className="absolute bottom-0 left-0 w-full bg-white opacity-0 group-hover:opacity-80 transition-opacity duration-300 py-1 text-center">
                                                     {itemEn}
                                                 </div>
+                                                <div></div>
                                             </div>
                                         );
                                     })}
