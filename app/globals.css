@@ -8,7 +8,7 @@
 }
 
 .bg_profile {
-    background-image: url(/image_fx1.jpg);
+    background-image: url(/profile_img.png);
     background-attachment: fixed; /* 背景画像を固定する */
     background-size: cover; /* 必要に応じて背景画像をカバー表示にする */
     background-repeat: no-repeat; /* 必要に応じて背景画像の繰り返しをなくす */
