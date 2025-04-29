@@ -1,12 +1,15 @@
+import { dinosaurDetails } from "@/public/data/dinosaur_data";
 import Image from "next/image";
 
 export default function Page({ params }) {
+    const dinosaurData = dinosaurDetails[params.name];
+
     return (
         <div
-            className="bg_profile flex justify-center items-center h-screen gap-40"
+            className="bg_profile flex justify-center gap-35"
             style={{ filter: "sepia(40%)" }}
         >
-            <div className="relative w-[500px] h-[270px] rounded-md overflow-hidden cursor-zoom-in group-hover:brightness-125 group-hover:filter group-hover:contrast-75 duration-300 ease-in-out border border-gray-600 ">
+            <div className="w-[500px] h-[270px] rounded-md overflow-hidden cursor-zoom-in group-hover:brightness-125 group-hover:filter group-hover:contrast-75 duration-300 ease-in-out border border-gray-600 sticky top-65">
                 <Image
                     src={`/dinosaur/${params.name}.jpg`}
                     alt={params}
@@ -16,32 +19,24 @@ export default function Page({ params }) {
                     style={{ filter: "sepia(70%)" }} // セピアフィルタを適用
                 />
             </div>
-            <div className="w-100 text-xl flex flex-col gap-y-5">
-                <div className="flex gap-5">
-                    <p>Name</p>
-                    <p>ヴェロキラプトル</p>
-                </div>
-                <div className="flex gap-5">
-                    <p>Size</p>
-                    <p>2m〜x2.5m</p>
-                </div>
-                <div className="flex gap-5">
-                    <p>Weight</p>
-                    <p>25kg</p>
-                </div>
-                <div className="flex gap-5">
-                    <p>Diet</p>
-                    <p>肉食</p>
-                </div>
-                <div>
-                    <p>Characteristics</p>
-                    <p>
-                        鋭い爪と歯を持ち、足が速く機敏な動きができる。体の大きさと比べると脳が大きかったため、最も知能の高い恐竜の一種と呼ばれている。後ろ足の第二の指には、大きく鎌状に発達した鋭い爪を持っており、獲物を捕らえたり、攻撃したりする際に使われたと考えられている。この爪は普段は持ち上げられて地面につかないようになってた
+            <div className="w-100 text-base flex flex-col gap-y-5 py-70">
+                {dinosaurData.details.map((detail) => (
+                    <div className="flex gap-16" key={detail.label}>
+                        <p className="rubik-marker-hatch-regular w-40  text-2xl">
+                            {detail.label}
+                        </p>
+                        <p className="zen-kaku-gothic-new-regular">
+                            {detail.value}
+                        </p>
+                    </div>
+                ))}
+                <div className="pt-[700px] py-10 flex flex-col gap-3">
+                    <p className="rubik-marker-hatch-regular w-40 text-2xl">
+                        Characteristics
                     </p>
-                </div>
-                <div className="flex gap-5">
-                    <p>Aggressiveness</p>
-                    <p>高</p>
+                    <p className="zen-kaku-gothic-new-regular text-sm leading-7">
+                        {dinosaurData.Characteristics} {/* ここを修正 */}
+                    </p>
                 </div>
             </div>
         </div>

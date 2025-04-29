@@ -11,24 +11,16 @@ import Link from "next/link";
 const dinosaur_dataset = [
     {
         eatingHabits: "肉食",
-
         dinoName: [
             "ヴェロキラプトル",
-
             "ティラノサウルス",
-
             "スピノサウルス",
-
             "カルノタサウルス",
         ],
-
         dinoNameEn: [
             "Velociraptor",
-
             "Tyrannosaurus",
-
             "Spinosaurus",
-
             "Carnotaurus",
         ],
     },
@@ -132,7 +124,7 @@ export default function Home() {
                                             >
                                                 <Link
                                                     href={{
-                                                        pathname: `/profile/${itemName}`,
+                                                        pathname: `/profile/${itemEn}`,
                                                     }}
                                                 >
                                                     <div className="relative w-80 h-60 rounded-md overflow-hidden cursor-zoom-in group-hover:brightness-125 group-hover:filter group-hover:contrast-75 duration-300 ease-in-out border border-gray-600">
