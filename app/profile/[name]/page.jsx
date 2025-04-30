@@ -30,7 +30,7 @@ export default function Page({ params }) {
                         </p>
                     </div>
                 ))}
-                <div className="pt-[700px] py-10 flex flex-col gap-3">
+                <div className="pt-[700px] py-5 flex flex-col gap-3">
                     <p className="rubik-marker-hatch-regular w-40 text-2xl">
                         Characteristics
                     </p>
