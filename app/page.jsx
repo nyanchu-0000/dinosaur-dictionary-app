@@ -15,7 +15,7 @@ const dinosaur_dataset = [
             "ヴェロキラプトル",
             "ティラノサウルス",
             "スピノサウルス",
-            "カルノタサウルス",
+            "カルノタウルス",
         ],
         dinoNameEn: [
             "Velociraptor",
@@ -24,60 +24,38 @@ const dinosaur_dataset = [
             "Carnotaurus",
         ],
     },
-
     {
         eatingHabits: "草食",
-
         dinoName: [
             "パラサウロロフス",
-
             "トリケラトプス",
-
             "ステゴサウルス",
-
             "ブラキオサウルス",
-
             "パキケファロサウルス",
-
             "アパトサウルス",
-
             "アンキロサウルス",
         ],
-
         dinoNameEn: [
             "Parasaurolophus",
-
             "Triceratops",
-
             "Stegosaurus",
-
             "Brachiosaurus",
-
             "Pachycephalosaurus",
-
             "Apatosaurus",
-
             "Ankylosaurus",
         ],
     },
-
     {
         eatingHabits: "翼竜",
-
         dinoName: ["プテラノドン", "ディモルフォドン"],
-
         dinoNameEn: ["Pteranodon", "Dimorphodon"],
     },
-
     {
         eatingHabits: "海生爬虫類",
-
         dinoName: ["モササウルス"],
-
         dinoNameEn: ["Mosasaurus"],
     },
 ];
-
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
 
@@ -129,7 +107,7 @@ export default function Home() {
                                                 >
                                                     <div className="relative w-80 h-60 rounded-md overflow-hidden cursor-zoom-in group-hover:brightness-125 group-hover:filter group-hover:contrast-75 duration-300 ease-in-out border border-gray-600">
                                                         <Image
-                                                            src={`/dinosaur/${itemName}.jpg`}
+                                                            src={`/dinosaur/${itemEn}.jpg`}
                                                             alt={itemName}
                                                             layout="fill"
                                                             objectFit="cover"
