@@ -6,3 +6,25 @@
     background-size: cover; /* 必要に応じて背景画像をカバー表示にする */
     background-repeat: no-repeat; /* 必要に応じて背景画像の繰り返しをなくす */
 }
+
+.bg_profile {
+    background-image: url(/profile_img.png);
+    background-attachment: fixed; /* 背景画像を固定する */
+    background-size: cover; /* 必要に応じて背景画像をカバー表示にする */
+    background-repeat: no-repeat; /* 必要に応じて背景画像の繰り返しをなくす */
+}
+
+.rubik-marker-hatch-regular {
+    font-family: "Rubik Marker Hatch", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .zen-kaku-gothic-new-regular {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  
+  

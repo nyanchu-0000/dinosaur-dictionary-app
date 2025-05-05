@@ -1,8 +1,12 @@
 "use client";
 
 import Image from "next/image";
+
 import { useState, useEffect } from "react";
+
 import Loading from "./components/Loading";
+import ScrollActivatedVideo from "./components/TapToPlayVideo";
+import Link from "next/link";
 
 const dinosaur_dataset = [
     {
@@ -11,7 +15,7 @@ const dinosaur_dataset = [
             "ヴェロキラプトル",
             "ティラノサウルス",
             "スピノサウルス",
-            "カルノタサウルス",
+            "カルノタウルス",
         ],
         dinoNameEn: [
             "Velociraptor",
@@ -52,7 +56,6 @@ const dinosaur_dataset = [
         dinoNameEn: ["Mosasaurus"],
     },
 ];
-
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
 
@@ -60,49 +63,63 @@ export default function Home() {
         const timer = setTimeout(() => {
             setIsLoading(false);
         }, 1500);
+
         return () => clearTimeout(timer);
     }, []);
 
     return (
-        <div className="flex flex-col items-center pt-8 bg_dino">
+        <div className="flex flex-col items-center bg_dino">
             {isLoading ? (
                 <Loading />
             ) : (
                 <>
+                    <ScrollActivatedVideo />
+
                     <div className="h-40 w-40 relative">
-                            <Image
-                                src="/logo/dinoLogo.png"
-                                alt="logo"
-                                layout="fill"
-                                objectFit="contain"
-                            />
+                        <Image
+                            src="/logo/dinoLogo.png"
+                            alt="logo"
+                            layout="fill"
+                            objectFit="contain"
+                        />
                     </div>
-                    <div className="">
+
+                    <div className="pt-5">
                         {dinosaur_dataset.map((obj, i) => (
                             <div className="mb-10" key={i}>
                                 <p className="font-semibold text-lg hidden">
                                     {obj.eatingHabits}
                                 </p>
+
                                 <div className="grid grid-cols-4 gap-x-4 gap-y-10">
                                     {obj.dinoName.map((itemName, j) => {
                                         const itemEn = obj.dinoNameEn[j];
+
                                         return (
                                             <div
                                                 key={itemName}
                                                 className="group relative"
                                             >
-                                                <div className="relative w-80 h-60 rounded-md overflow-hidden cursor-zoom-in group-hover:brightness-125 group-hover:filter group-hover:contrast-75 duration-300 ease-in-out border border-gray-600">
-                                                    <Image
-                                                        src={`/dinosaur/${itemName}.jpg`}
-                                                        alt={itemName}
-                                                        layout="fill"
-                                                        objectFit="cover"
-                                                        className="transition-transform duration-300 ease-in-out group-hover:scale-110"
-                                                    />
-                                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 text-white font-bold text-lg">
-                                                        {itemName}
+                                                <Link
+                                                    href={{
+                                                        pathname: `/profile/${itemEn}`,
+                                                    }}
+                                                >
+                                                    <div className="relative w-80 h-60 rounded-md overflow-hidden cursor-zoom-in group-hover:brightness-125 group-hover:filter group-hover:contrast-75 duration-300 ease-in-out border border-gray-600">
+                                                        <Image
+                                                            src={`/dinosaur/${itemEn}.jpg`}
+                                                            alt={itemName}
+                                                            layout="fill"
+                                                            objectFit="cover"
+                                                            className="transition-transform duration-300 ease-in-out group-hover:scale-110"
+                                                        />
+
+                                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 text-white font-bold text-lg">
+                                                            {itemName}
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                </Link>
+
                                                 <div className="absolute bottom-0 left-0 w-full bg-white opacity-0 group-hover:opacity-80 transition-opacity duration-300 py-1 text-center">
                                                     {itemEn}
                                                 </div>

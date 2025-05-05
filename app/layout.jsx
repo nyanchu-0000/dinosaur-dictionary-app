@@ -14,6 +14,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="ja">
+            <head>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link
+                    rel="preconnect"
+                    href="https://fonts.gstatic.com"
+                    crossOrigin="true"
+                />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Rubik+Marker+Hatch&display=swap"
+                    rel="stylesheet"
+                />
+
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap"
+                    rel="stylesheet"
+                ></link>
+            </head>
             <body className={`${notoSansJp.variable}  antialiased`}>
                 {children}
             </body>
