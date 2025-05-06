@@ -8,8 +8,10 @@ const Loading = () => {
                 <Image
                     src="/dinosaur/logo/logo.png"
                     alt="Loading Logo"
-                    layout="fill"
-                    objectFit="contain"
+                    fill
+                    sizes="string"
+                    className="object-contain"
+                    priority
                 />
             </div>
         </div>

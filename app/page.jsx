@@ -80,8 +80,10 @@ export default function Home() {
                         <Image
                             src="/logo/dinoLogo.png"
                             alt="logo"
-                            layout="fill"
-                            objectFit="contain"
+                            fill
+                            sizes="string"
+                            className="object-contain"
+                            priority
                         />
                     </div>
 
@@ -110,9 +112,10 @@ export default function Home() {
                                                         <Image
                                                             src={`/dinosaur/${itemEn}.jpg`}
                                                             alt={itemName}
-                                                            layout="fill"
-                                                            objectFit="cover"
-                                                            className="transition-transform duration-300 ease-in-out group-hover:scale-110"
+                                                            fill
+                                                            sizes="string"
+                                                            className="object-contain transition-transform duration-300 ease-in-out group-hover:scale-110"
+                                                            priority
                                                         />
 
                                                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 text-white font-bold text-lg">
