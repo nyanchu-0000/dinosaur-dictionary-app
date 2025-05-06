@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 function TapToPlayVideo() {
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [zoomLevel, setZoomLevel] = useState(1); // 初期ズーム率を 1 に設定
+    const [zoomLevel, setZoomLevel] = useState(1);
 
     const handleVideoTap = () => {
         const videoElement = videoRef.current;
@@ -58,7 +58,7 @@ function TapToPlayVideo() {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, []); 
+    }, []);
 
     return (
         <div

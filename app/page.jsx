@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import Loading from "./components/Loading";
 import ScrollActivatedVideo from "./components/TapToPlayVideo";
 import Link from "next/link";
+import Footer from "./components/Footer";
 
 const dinosaur_dataset = [
     {
@@ -132,6 +133,7 @@ export default function Home() {
                     </div>
                 </>
             )}
+            <Footer />
         </div>
     );
 }
