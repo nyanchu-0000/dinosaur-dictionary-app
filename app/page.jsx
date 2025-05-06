@@ -114,7 +114,7 @@ export default function Home() {
                                                             alt={itemName}
                                                             fill
                                                             sizes="string"
-                                                            className="object-contain transition-transform duration-300 ease-in-out group-hover:scale-110"
+                                                            className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
                                                             priority
                                                         />
 

@@ -15,7 +15,7 @@ export default function Page({ params }) {
                     alt={params}
                     fill
                     sizes="string"
-                    className="object-contain transition-transform duration-300 ease-in-out group-hover:scale-110"
+                    className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
                     priority
                     style={{ filter: "sepia(70%)" }} // セピアフィルタを適用
                 />
