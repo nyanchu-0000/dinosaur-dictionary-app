@@ -20,7 +20,7 @@ export default function Page({ params }) {
                     style={{ filter: "sepia(70%)" }} // セピアフィルタを適用
                 />
             </div>
-            <div className="w-100 text-base flex flex-col gap-y-5 py-70">
+            <div className="w-100 text-base flex flex-col gap-y-3 pt-70 pb-30">
                 {dinosaurData.details.map((detail) => (
                     <div className="flex gap-16" key={detail.label}>
                         <p className="rubik-marker-hatch-regular w-40  text-2xl">
