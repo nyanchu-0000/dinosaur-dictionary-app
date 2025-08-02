@@ -22,7 +22,7 @@ export default function Page({ params }) {
                         style={{ filter: "sepia(70%)" }} // セピアフィルタを適用
                     />
                 </div>
-                <div className="w-100 h-[2000px] justify-between text-base flex flex-col gap-y-3 pt-70 pb-50">
+                <div className="w-100 h-[2000px] justify-between text-base flex flex-col gap-y-3 pt-70 pb-25">
                     <div className="flex flex-col gap-4">
                         {dinosaurData.details.map((detail) => (
                             <div className="flex gap-16" key={detail.label}>
